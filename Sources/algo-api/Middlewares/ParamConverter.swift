@@ -9,9 +9,6 @@ public class ParamConverter<T: Deserializer>: RouterMiddleware {
     public func handle(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) throws {
         var params: [String: Any] = [:]
         
-        
-        dump(request)
-        
         for (k, v) in request.parameters {
             params[k] = v
         }
